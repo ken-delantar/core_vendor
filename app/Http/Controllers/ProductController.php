@@ -17,7 +17,7 @@ class ProductController extends Controller
         $productsArray = $products->data;
     
         $filteredProducts = array_filter($productsArray, function ($product) use ($user) {
-            return isset($product->metadata->vendor_id) && $product->metadata->vendor_id === $user->stripe_customer_id;
+            return isset($product->metadata->vendor_id) && $product->metadata->vendor_id === $user->stripe_customer_id && $product->metadata->status != 'Archieved';
         });
     
         return view('product_management.index', ['products' => $filteredProducts]);

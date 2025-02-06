@@ -41,7 +41,7 @@
                                 @endforeach    
                             </td>
                             <td>{{ $product->metadata['stock'] }}</td>
-                            <td>{{ $product->active == 1 ? 'Active' : 'Inactive' }}</td>
+                            <td>{{ $product->metadata['status'] }}</td>
                             <td>
                                 <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateProductModal{{ $product->id }}">Edit</button>
                                 <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal{{ $product->id }}">Delete</button>
